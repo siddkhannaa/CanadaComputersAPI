@@ -1,2 +1,4 @@
+
+BeautifulSoup4
 flask
 flask-restful

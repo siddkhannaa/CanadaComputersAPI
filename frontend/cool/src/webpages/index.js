@@ -15,7 +15,7 @@ const Webpages = () => {
         <Router>
             <Routes>
                 <Route exact path="/" element={<Home />}></Route>
-                <Route path="/user" element={<User />}></Route>
+                <Route path="/user/:id" element={<User />}></Route>
             </Routes>
         </Router>
     );

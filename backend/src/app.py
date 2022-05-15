@@ -1,5 +1,7 @@
-from flask import Flask, jsonify
-from flask_restful import Resource, Api
+from flask import Flask, jsonify, request
+from flask_restful import Api
+
+from endpoints import Search, Uwu
 
 app = Flask(__name__)
 api = Api(app)
@@ -10,13 +12,8 @@ api = Api(app)
 # def index():
 #     return render_template("index.html", thingo=':flushed:')
 
-class Uwu(Resource):
-    def get(self):
-        resp = jsonify({'meme': 'cat'})
-        resp.headers['Access-Control-Allow-Origin'] = '*'
-        return resp
-
-api.add_resource(Uwu, '/')
+api.add_resource(Uwu, '/uwu/<string:memeID>')
+api.add_resource(Search, '/search/<search_string>')
 
 if __name__ == '__main__':
     app.run(debug=True)
